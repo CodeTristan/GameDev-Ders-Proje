@@ -5,18 +5,34 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Movement")]
+    [SerializeField] float speed = 7f;
+
+    [Header("Jump")]
+    [SerializeField] float jumpForce = 5f;
+    [SerializeField] float airMultiplier;
+
+    public float groundDrag;
+
+    [Header("Ground Check")]
+    public float playerHeight;
+    public LayerMask whatIsGround;
+    bool isGrounded;
+
     PlayerInput playerInput;
     InputAction moveAction;
+    InputAction jumpAction;
     Rigidbody rb;
     [SerializeField] Transform orientation;
 
-    [SerializeField] float speed = 7;
+
 
     void Start()
     {
         //accessing the input actions
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
+        jumpAction = playerInput.actions.FindAction("Jump");
 
         //freeze rotation so player doesnt fall
         rb = GetComponent<Rigidbody>();
@@ -26,7 +42,29 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
+        //checking if player is on the ground
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+
+        //call the method for player movement
         MovePlayer();
+
+        //checking if the player is on ground and jump button is pressed
+        if (isGrounded && jumpAction.triggered)
+        {
+            PlayerJump();
+        }
+
+        //handle drag
+        if (isGrounded)
+        {//if player is touching the ground, apply drag
+            rb.drag = groundDrag;
+        }
+        else
+        {//if player is on the air, don't apply drag
+            rb.drag = 0;
+        }
+
     }
 
     void MovePlayer()
@@ -47,7 +85,23 @@ public class PlayerMovement : MonoBehaviour
         // Calculate the movement direction relative to the Orientation
         Vector3 moveDirection = (forward * direction.y + right * direction.x).normalized;
 
+        
         // Apply movement
-        transform.position += moveDirection * speed * Time.deltaTime;
+        if (isGrounded)
+        {
+            transform.position += moveDirection * speed * Time.deltaTime;
+        }
+        else if (!isGrounded)
+        {//if not grounded change the speed with airMultiplier
+            transform.position += moveDirection * speed * Time.deltaTime * airMultiplier;
+        }
+    }
+
+    void PlayerJump()
+    {
+        //reset y velocity when jumping
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 }

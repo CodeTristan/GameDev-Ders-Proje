@@ -158,7 +158,6 @@ public class BackgroundManager : MonoBehaviour
     {
         instance = this;
         soundEffects = new List<SoundEffect>();
-        currentBackground = GetBackgroundByName(BackgroundName.Your_House);
         ToggleGeneralCanvas(true);
         CloseAllBackgrounds();
 

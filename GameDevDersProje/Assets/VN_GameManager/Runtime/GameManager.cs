@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         sahneManager.LoadScene("MainMenu");
 
 
+
         Debug.Log("Initialize Completed!");
     }
 

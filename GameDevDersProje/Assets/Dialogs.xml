@@ -16,6 +16,12 @@
           <IDCounter>3</IDCounter>
           <ClusterName>Cluster #1</ClusterName>
           <IsStartBranch>true</IsStartBranch>
+          <Instruction xsi:type="BackgroundInstruction">
+            <Name>FADEIN</Name>
+            <Type>Background</Type>
+            <ID>2</ID>
+            <CheckDialogs>false</CheckDialogs>
+          </Instruction>
           <Instruction xsi:type="Dialog">
             <Name>NONE</Name>
             <Type>Dialog</Type>
@@ -29,12 +35,6 @@
               <s>Etrafta soğuk ve basık bir hava vardı. Gündüz olmasına rağmen etraf karanlıktı.</s>
               <s>Evinin önünde köyün şamanını gördü.</s>
             </Sentences>
-          </Instruction>
-          <Instruction xsi:type="BackgroundInstruction">
-            <Name>FADEIN</Name>
-            <Type>Background</Type>
-            <ID>2</ID>
-            <CheckDialogs>false</CheckDialogs>
           </Instruction>
         </Branch>
         <Branch>

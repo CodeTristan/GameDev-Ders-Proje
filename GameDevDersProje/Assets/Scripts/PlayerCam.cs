@@ -12,6 +12,7 @@ public class PlayerCam : MonoBehaviour
     public float xRotation;
     public float yRotation;
 
+    public bool LockMovement;
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -20,19 +21,24 @@ public class PlayerCam : MonoBehaviour
 
     private void Update()
     {
-        //getting the mouse input
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
-        //this is just how Unity handles rotations I dunno its meaning
-        xRotation -= mouseY;
-        yRotation += mouseX;
+        if(!LockMovement)
+        {
+            //getting the mouse input
+            float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
+            float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
-        //make sure player cannot look up and down more than 90 degrees
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            //this is just how Unity handles rotations I dunno its meaning
+            xRotation -= mouseY;
+            yRotation += mouseX;
 
-        //rotating cam and orientation
-        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        orieantation.rotation = Quaternion.Euler(0, yRotation, 0);
+            //make sure player cannot look up and down more than 90 degrees
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+            //rotating cam and orientation
+            transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+            orieantation.rotation = Quaternion.Euler(0, yRotation, 0);
+        }
+        
     }
 }

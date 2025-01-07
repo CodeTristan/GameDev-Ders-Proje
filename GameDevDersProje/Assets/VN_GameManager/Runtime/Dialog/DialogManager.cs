@@ -124,6 +124,9 @@ public class DialogManager : MonoBehaviour
 
     public void StartBranch(string fileName, string branchName, bool isLoop = false)
     {
+        FindObjectOfType<PlayerMovement>().LockMovement = true;
+        FindObjectOfType<PlayerCam>().LockMovement = true;
+
         FileXML file = GetFileByName(fileName);
 
         DialogManagerVariables var = new DialogManagerVariables();
@@ -139,6 +142,9 @@ public class DialogManager : MonoBehaviour
     //overflow
     public void StartBranch(DialogBranch branch,bool isLoop = false)
     {
+        FindObjectOfType<PlayerMovement>().LockMovement = true;
+        FindObjectOfType<PlayerCam>().LockMovement = true;
+
         inDialog = true;
 
         DialogManagerVariables var = new DialogManagerVariables();
@@ -399,13 +405,18 @@ public class DialogManager : MonoBehaviour
 
     private void EndBranch()
     {
+        FindObjectOfType<PlayerMovement>().LockMovement = false;
+        FindObjectOfType<PlayerCam>().LockMovement = false;
+
+
         //Debug.Log(ManagerVariables.Count);
         DialogManagerVariables popped = ManagerVariables.Pop();
-        Camera.main.cullingMask = 0b01111111111111111111;
+
 
         //End
         if (ManagerVariables.Count <= 0)
         {
+            CheckBranch(popped.currentBranch.name);
             dialogText.text = "";
             spriteManager.ResetAllUI();
             InputManager.instance.DisableAllControls();
@@ -439,7 +450,7 @@ public class DialogManager : MonoBehaviour
     public void StartDialog(Dialog dialog)
     {
         DialogCanvas.enabled = true;
-        Camera.main.cullingMask = 0b1111101111111111;
+        //Camera.main.cullingMask = 0b1111101111111111;
 
         foreach (string sentence in dialog.sentences)
         {
@@ -665,6 +676,13 @@ public class DialogManager : MonoBehaviour
         nextSentenceButton.SetActive(true);
     }
 
+    private void CheckBranch(string branchName)
+    {
+        if(branchName == "Shaman Talk 1")
+        {
+            GameObject.FindWithTag("Portal1").gameObject.SetActive(true);
+        }
+    }
     private void OnDrawGizmosSelected()
     {
         if(ManagerVariables != null)

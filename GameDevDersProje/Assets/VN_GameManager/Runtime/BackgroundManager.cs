@@ -197,7 +197,7 @@ public class BackgroundManager : MonoBehaviour
     }
     public void TintBackground(Color32 color)
     {
-        currentBackground.backgroundImage.color = color;
+        //currentBackground.backgroundImage.color = color;
     }
     public void ChangeBackground(string name)
     {

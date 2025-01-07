@@ -95,6 +95,10 @@ public class AllConditions
     {
         conditions = new List<Condition>();
         conditionNameDictionary = new Dictionary<ConditionName, string>();
+
+        conditionNameDictionary.Add(ConditionName.GameStart, "GameStart");
+
+        conditions.Add(new Condition("GameStart", 1));
     }
 
 

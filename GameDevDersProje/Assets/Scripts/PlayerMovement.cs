@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
     [SerializeField] Transform orientation;
 
-
+    public bool LockMovement;
 
     void Start()
     {
@@ -42,31 +42,40 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        //checking if the player is on ground and jump button is pressed
-
-        if (isGrounded && jumpAction.triggered)
+        if (!LockMovement)
         {
-            PlayerJump();
-        }
+            //checking if the player is on ground and jump button is pressed
 
-        //handle drag
-        if (isGrounded)
-        {//if player is touching the ground, apply drag
-            rb.drag = groundDrag;
+            if (isGrounded && jumpAction.triggered)
+            {
+                PlayerJump();
+            }
+
+            //handle drag
+            if (isGrounded)
+            {//if player is touching the ground, apply drag
+                rb.drag = groundDrag;
+            }
+            else
+            {//if player is on the air, don't apply drag
+                rb.drag = 0;
+            }
         }
-        else
-        {//if player is on the air, don't apply drag
-            rb.drag = 0;
-        }
+        
     }
 
     private void FixedUpdate()
     {
-        //checking if player is on the ground
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
-        //call the method for player movement
-        MovePlayer();
+        if (!LockMovement)
+        {
+            //checking if player is on the ground
+            isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+
+            //call the method for player movement
+            MovePlayer();
+        }
+        
 
         
     }

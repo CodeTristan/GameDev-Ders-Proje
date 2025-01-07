@@ -11,6 +11,15 @@ public class ClickableDialog : MonoBehaviour
     public string branchName;
     public string ExamineText = "Examine";
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Player")
+        {
+            _StartBranchWithFile();
+            Destroy(this);
+        }
+    }
     public void _StartBranchWithFile()
     {
         DialogManager.instance.StartBranch(fileName, branchName);

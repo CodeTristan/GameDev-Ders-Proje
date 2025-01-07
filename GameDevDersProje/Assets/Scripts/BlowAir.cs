@@ -52,7 +52,7 @@ public class BlowAir : MonoBehaviour
         if (isOnCooldown)
         {
             cooldownTimer += Time.deltaTime;
-            Debug.Log(cooldownTimer);
+            // Debug.Log(cooldownTimer);
             if (cooldownTimer >= blowDuration)
             {
                 isOnCooldown = false; 
@@ -106,7 +106,11 @@ public class BlowAir : MonoBehaviour
     void OnParticleCollision(GameObject other)
     {
         Debug.Log($"Particle collided with: {other.name}");
-
+        if (other.tag != "Pushable")
+        {
+            Debug.Log("Not Pushable");
+            return;
+        }
         Rigidbody rb = other.GetComponent<Rigidbody>();
         if (rb == null)
         {

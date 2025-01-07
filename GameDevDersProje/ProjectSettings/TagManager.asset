@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bed
   - LyceumGuy
+  - Pushable
   layers:
   - Default
   - TransparentFX

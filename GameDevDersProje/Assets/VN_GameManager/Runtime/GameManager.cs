@@ -45,11 +45,6 @@ public class GameManager : MonoBehaviour
         saveManager.Init();
 
 
-        if (DebugMod)
-        {
-            conditionManager.ChangeCondition(ConditionName.Action_Point, 9999);
-            conditionManager.ChangeCondition(ConditionName.Gold, 99999);
-        }
         sahneManager.LoadScene("MainMenu");
 
 

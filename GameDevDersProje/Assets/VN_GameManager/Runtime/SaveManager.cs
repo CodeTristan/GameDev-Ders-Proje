@@ -295,8 +295,6 @@ public class SaveManager : MonoBehaviour
             gameData.DayCount = 1;
             gameData.DayIndex = 0;
             gameData.GossipIndex = 0;
-
-            gameData.currentPlace = GameManager.instance.allPlaces.GetPlaceByName(PlaceName.Your_House);
             gameData.DataName = "Start Data";
 
         }
@@ -310,7 +308,6 @@ public class SaveManager : MonoBehaviour
     {
         saveSlotFile.SaveSlots[fileIndex].isEmpty = false;
         saveSlotFile.SaveSlots[fileIndex].DayText = "";
-        saveSlotFile.SaveSlots[fileIndex].GoldText = ConditionManager.instance.GetConditionByName(ConditionName.Gold).status + "";
 
         //image data is set on WriteToFile function
     }

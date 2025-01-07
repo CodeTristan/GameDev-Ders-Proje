@@ -42,14 +42,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
-        //checking if player is on the ground
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
-
-        //call the method for player movement
-        MovePlayer();
-
         //checking if the player is on ground and jump button is pressed
+
         if (isGrounded && jumpAction.triggered)
         {
             PlayerJump();
@@ -64,12 +58,23 @@ public class PlayerMovement : MonoBehaviour
         {//if player is on the air, don't apply drag
             rb.drag = 0;
         }
+    }
 
+    private void FixedUpdate()
+    {
+        //checking if player is on the ground
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+
+        //call the method for player movement
+        MovePlayer();
+
+        
     }
 
     void MovePlayer()
     {
         Vector2 direction = moveAction.ReadValue<Vector2>();
+
 
         // Get the forward and right directions based on the Orientation object
         Vector3 forward = orientation.forward;
@@ -83,22 +88,24 @@ public class PlayerMovement : MonoBehaviour
         right.Normalize();
 
         // Calculate the movement direction relative to the Orientation
-        Vector3 moveDirection = (forward * direction.y + right * direction.x).normalized;
+        Vector3 moveDirection = (forward * direction.y + right * direction.x).normalized * speed;
 
-        
+        Debug.Log(moveDirection);
         // Apply movement
         if (isGrounded)
         {
-            transform.position += moveDirection * speed * Time.deltaTime;
+            rb.velocity = new Vector3(moveDirection.x,rb.velocity.y, moveDirection.z) ;
         }
         else if (!isGrounded)
         {//if not grounded change the speed with airMultiplier
-            transform.position += moveDirection * speed * Time.deltaTime * airMultiplier;
+            moveDirection *= airMultiplier;
+            rb.velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z);
         }
     }
 
     void PlayerJump()
     {
+        Debug.Log("JUMP");
         //reset y velocity when jumping
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 

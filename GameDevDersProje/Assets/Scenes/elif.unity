@@ -390,7 +390,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993981364}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b01e1457c7585f5428c4603105d4701a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 1087633266}
   - component: {fileID: 1087633265}
   - component: {fileID: 1087633272}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,8 +505,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  jumpForce: 12
-  airMultiplier: 0.4
+  jumpForce: 9.1
+  airMultiplier: 0.8
   groundDrag: 3
   playerHeight: 2
   whatIsGround:
@@ -577,7 +577,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087633264}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b01e1457c7585f5428c4603105d4701a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -689,7 +689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1406880517}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CameraPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -839,7 +839,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1737930088}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}

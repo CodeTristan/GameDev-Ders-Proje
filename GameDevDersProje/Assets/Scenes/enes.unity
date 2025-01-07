@@ -1428,7 +1428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5719857109423543322, guid: a513a718e4e3eb64c85ac711cccca8ee, type: 3}
       propertyPath: CollisionModule.multiplyColliderForceByCollisionAngle
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5719857109423543322, guid: a513a718e4e3eb64c85ac711cccca8ee, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value

@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class PlayerFly : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Settings")]
+    public float flyForce;
+
+    Rigidbody body;
+
+    private void Start()
     {
-        
+        body = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Vector3 force = new Vector3(0, 1, 0) * flyForce + transform.up;
+            body.AddForce(force, ForceMode.Acceleration);
+        }
     }
 }

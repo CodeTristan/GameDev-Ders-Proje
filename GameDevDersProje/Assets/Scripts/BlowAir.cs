@@ -102,29 +102,4 @@ public class BlowAir : MonoBehaviour
             windParticle.transform.rotation = cam.rotation;
         }
     }
-
-    void OnParticleCollision(GameObject other)
-    {
-        Debug.Log($"Particle collided with: {other.name}");
-        if (other.tag != "Pushable")
-        {
-            Debug.Log("Not Pushable");
-            return;
-        }
-        Rigidbody rb = other.GetComponent<Rigidbody>();
-        if (rb == null)
-        {
-            Debug.LogWarning($"{other.name} nesnesinde Rigidbody bulunamadý!");
-            return;
-        }
-
-        // Çarpýþma yönünü hesapla
-        Vector3 forceDirection = (other.transform.position - windParticle.transform.position).normalized;
-
-        // Kuvveti hesapla ve uygula
-        float scaledForce = pushForce / (rb.mass + 0.1f); // Kütleye göre kuvvet ölçekle
-        Debug.Log($"Applying force to {other.name}: Direction={forceDirection}, ScaledForce={scaledForce}");
-
-        rb.AddForce(forceDirection * scaledForce, ForceMode.Impulse);
-    }
 }

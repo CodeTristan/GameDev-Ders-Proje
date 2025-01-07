@@ -90,7 +90,6 @@ public class PlayerMovement : MonoBehaviour
         // Calculate the movement direction relative to the Orientation
         Vector3 moveDirection = (forward * direction.y + right * direction.x).normalized * speed;
 
-        Debug.Log(moveDirection);
         // Apply movement
         if (isGrounded)
         {

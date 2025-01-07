@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<File xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IDCounter>1</IDCounter>
+  <InnerFiles>
+    <Name>Cluster #1</Name>
+    <File>
+      <FileName>File #1</FileName>
+      <ClusterName>Cluster #1</ClusterName>
+      <IDCounter>2</IDCounter>
+      <BranchCluster>
+        <Name>Cluster #1</Name>
+        <Branch>
+          <Name>START</Name>
+          <Type>DialogBranch</Type>
+          <ID>0</ID>
+          <IDCounter>3</IDCounter>
+          <ClusterName>Cluster #1</ClusterName>
+          <IsStartBranch>true</IsStartBranch>
+          <Instruction xsi:type="Dialog">
+            <Name>NONE</Name>
+            <Type>Dialog</Type>
+            <ID>0</ID>
+            <Expression>NONE</Expression>
+            <Animation>NONE</Animation>
+            <Voice />
+            <Sentences>
+              <s>Yiğit her zamanki gibi sabah yürüyüşünden sonra evine dönmekteydi</s>
+              <s>Fakat bir şeyler tersti...</s>
+              <s>Etrafta soğuk ve basık bir hava vardı. Gündüz olmasına rağmen etraf karanlıktı.</s>
+              <s>Evinin önünde köyün şamanını gördü.</s>
+            </Sentences>
+          </Instruction>
+          <Instruction xsi:type="BackgroundInstruction">
+            <Name>FADEIN</Name>
+            <Type>Background</Type>
+            <ID>2</ID>
+            <CheckDialogs>false</CheckDialogs>
+          </Instruction>
+        </Branch>
+        <Branch>
+          <Name>Shaman Talk 1</Name>
+          <Type>DialogBranch</Type>
+          <ID>1</ID>
+          <IDCounter>5</IDCounter>
+          <ClusterName>Cluster #1</ClusterName>
+          <IsStartBranch>false</IsStartBranch>
+          <Instruction xsi:type="Dialog">
+            <Name>Şaman</Name>
+            <Type>Dialog</Type>
+            <ID>0</ID>
+            <Expression>NONE</Expression>
+            <Animation>NONE</Animation>
+            <Voice />
+            <Sentences>
+              <s>Ben de seni bekliyordum Yiğit.</s>
+            </Sentences>
+          </Instruction>
+          <Instruction xsi:type="Dialog">
+            <Name>Yiğit</Name>
+            <Type>Dialog</Type>
+            <ID>1</ID>
+            <Expression>NONE</Expression>
+            <Animation />
+            <Voice />
+            <Sentences>
+              <s>Hayırdır? Etraf niye böyle basık.</s>
+            </Sentences>
+          </Instruction>
+          <Instruction xsi:type="Dialog">
+            <Name>Şaman</Name>
+            <Type>Dialog</Type>
+            <ID>2</ID>
+            <Expression>NONE</Expression>
+            <Animation>NONE</Animation>
+            <Voice>NONE</Voice>
+            <Sentences>
+              <s>İyeleri bilir misin Yiğit?</s>
+              <s>İyeler, bu dünyada düzeni koruyan ruhlardır.</s>
+              <s>Erlik Han'ın kızları köyümüzdeki Od İyesini kaçırdı.</s>
+              <s>Bize yalnızca sen yardım edebilirsin.</s>
+            </Sentences>
+          </Instruction>
+          <Instruction xsi:type="Dialog">
+            <Name>Yiğit</Name>
+            <Type>Dialog</Type>
+            <ID>3</ID>
+            <Expression />
+            <Animation />
+            <Voice />
+            <Sentences>
+              <s>Ben mi?</s>
+              <s>Ben ne yapabilirim ki size?</s>
+            </Sentences>
+          </Instruction>
+          <Instruction xsi:type="Dialog">
+            <Name>Şaman</Name>
+            <Type>Dialog</Type>
+            <ID>4</ID>
+            <Expression />
+            <Animation />
+            <Voice />
+            <Sentences>
+              <s>Od ana seni seçti. Sana güçlerini bahşetti.</s>
+              <s>Git. Arkandaki geçitten geç, git ve onu kurtar.</s>
+            </Sentences>
+          </Instruction>
+        </Branch>
+      </BranchCluster>
+    </File>
+  </InnerFiles>
+</File>

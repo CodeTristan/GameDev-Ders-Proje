@@ -34,11 +34,18 @@ public class PlayerMovement : MonoBehaviour
         moveAction = playerInput.actions.FindAction("Move");
         jumpAction = playerInput.actions.FindAction("Jump");
 
+        moveAction.performed += PlaySound;
         //freeze rotation so player doesnt fall
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
 
+    private void PlaySound(InputAction.CallbackContext callbackContext)
+    {
+        int r = Random.Range(1, 4);
+        string name = "walk" + r;
+        MusicManager.instance.PlaySound(name);
+    }
 
     void Update()
     {
@@ -80,6 +87,19 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Portal1")
+        {
+            Destroy(other.gameObject);
+            SahneManager.instance.LoadScene("elif");
+        }
+        else if (other.gameObject.tag == "Portal2")
+        {
+            Destroy(other.gameObject);
+            SahneManager.instance.LoadScene("enes");
+        }
+    }
     void MovePlayer()
     {
         Vector2 direction = moveAction.ReadValue<Vector2>();

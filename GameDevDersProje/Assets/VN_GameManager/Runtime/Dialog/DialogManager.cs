@@ -125,8 +125,12 @@ public class DialogManager : MonoBehaviour
 
     public void StartBranch(string fileName, string branchName, bool isLoop = false)
     {
-        FindObjectOfType<PlayerMovement>().LockMovement = true;
-        FindObjectOfType<PlayerCam>().LockMovement = true;
+        if(FindObjectOfType<PlayerMovement>() != null)
+        {
+            FindObjectOfType<PlayerMovement>().LockMovement = true;
+            FindObjectOfType<PlayerCam>().LockMovement = true;
+        }
+        
 
         FileXML file = GetFileByName(fileName);
 
@@ -143,8 +147,12 @@ public class DialogManager : MonoBehaviour
     //overflow
     public void StartBranch(DialogBranch branch,bool isLoop = false)
     {
-        FindObjectOfType<PlayerMovement>().LockMovement = true;
-        FindObjectOfType<PlayerCam>().LockMovement = true;
+        if (FindObjectOfType<PlayerMovement>() != null)
+        {
+            FindObjectOfType<PlayerMovement>().LockMovement = true;
+            FindObjectOfType<PlayerCam>().LockMovement = true;
+        }
+      
 
         inDialog = true;
 
@@ -406,8 +414,12 @@ public class DialogManager : MonoBehaviour
 
     private void EndBranch()
     {
-        FindObjectOfType<PlayerMovement>().LockMovement = false;
-        FindObjectOfType<PlayerCam>().LockMovement = false;
+        if(FindAnyObjectByType<PlayerMovement>() != null)
+        {
+            FindObjectOfType<PlayerMovement>().LockMovement = false;
+            FindObjectOfType<PlayerCam>().LockMovement = false;
+        }
+   
 
 
         //Debug.Log(ManagerVariables.Count);

@@ -15,7 +15,7 @@ public class Condition
 
     [XmlElement("Type")] public ConditionType type;
 
-    [XmlElement("CheckSign")][HideInInspector] public string CheckSign = "";
+    [XmlElement("CheckSign")] public string CheckSign = "=";
 
     public Condition()
     {
@@ -59,7 +59,7 @@ public class Condition
 [System.Serializable]
 public class CheckCondition : Condition
 {
-    [HideInInspector]public ConditionName enumConditionName;
+    public ConditionName enumConditionName;
 
     public CheckCondition()
     {
@@ -80,7 +80,10 @@ public class CheckCondition : Condition
 }
 public enum ConditionName
 {
-    GameStart
+    GameStart,
+    ShamanTalk_1,
+    ShamanTalk_2,
+    ShamanTalk_3
 }
 
 [System.Serializable]
@@ -97,8 +100,14 @@ public class AllConditions
         conditionNameDictionary = new Dictionary<ConditionName, string>();
 
         conditionNameDictionary.Add(ConditionName.GameStart, "GameStart");
+        conditionNameDictionary.Add(ConditionName.ShamanTalk_1, "ShamanTalk 1");
+        conditionNameDictionary.Add(ConditionName.ShamanTalk_2, "ShamanTalk 2");
+        conditionNameDictionary.Add(ConditionName.ShamanTalk_3, "ShamanTalk 3");
 
         conditions.Add(new Condition("GameStart", 1));
+        conditions.Add(new Condition("ShamanTalk 1", 1));
+        conditions.Add(new Condition("ShamanTalk 2", 0));
+        conditions.Add(new Condition("ShamanTalk 3", 0));
     }
 
 

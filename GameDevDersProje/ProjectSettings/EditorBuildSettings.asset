@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 417db7cfe67fc144ca5283c68b674609
+  - enabled: 1
+    path: Assets/Scenes/elif.unity
+    guid: f82db2e420f83d845bd70c8b344f3036
+  - enabled: 1
+    path: Assets/Scenes/enes.unity
+    guid: ffb45ff55652c8f41a31822f75869593
   m_configObjects: {}

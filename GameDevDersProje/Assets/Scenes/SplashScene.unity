@@ -552,6 +552,46 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5217403278376702271, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
+      propertyPath: musics.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217403278376702271, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
+      propertyPath: sounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217403278376702271, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e56f962170c476439212e5cd4bea515, type: 3}
+    - target: {fileID: 5217403278376702271, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
+      propertyPath: sounds.Array.data[0].name
+      value: walk1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217403278376702271, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ce89ff52f1969f4d9011c1e3c108fc8, type: 3}
+    - target: {fileID: 5217403278376702271, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: walk2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217403278376702271, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 728ebfdc86b86484d90a5e94d948e4e0, type: 3}
+    - target: {fileID: 5217403278376702271, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: walk3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217403278376702271, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
+      propertyPath: sounds.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217403278376702271, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5487431541035050360, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -614,15 +654,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7374823455546159070, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7374823455546159070, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7374823455546159070, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 95.50098
       objectReference: {fileID: 0}
     - target: {fileID: 7419835560947127268, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
       propertyPath: m_IsActive
@@ -634,7 +674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7511217472689280486, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -49018484
+      value: -49076804
       objectReference: {fileID: 0}
     - target: {fileID: 7724520564821228156, guid: 7f4c6f33b10426746b17aaba48c9e951, type: 3}
       propertyPath: m_AnchorMax.y

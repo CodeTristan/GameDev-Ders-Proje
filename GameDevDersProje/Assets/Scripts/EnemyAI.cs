@@ -9,6 +9,8 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
 
+    public Animator animator; // Animator referansý
+
     //patrolling
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -24,21 +26,49 @@ public class EnemyAI : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("Player").transform;
+        player = GameObject.FindWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        ResetAnimator();
     }
 
+    void ResetAnimator()
+    {
 
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isRunning", false);
+        animator.SetBool("isAttaking", false);
+        animator.SetBool("isPlayerInSight", false);
+        animator.SetBool("isPlayerInAttack", false);
+        animator.SetBool("isHit", false);
+        animator.SetBool("isDead", false);
+    }
     void Update()
     {
         //check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange) Patrolling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInSightRange && playerInAttackRange) AttackPlayer();
 
+        if (!playerInSightRange && !playerInAttackRange)
+        {
+            ResetAnimator();
+            animator.SetBool("isWalking", true);
+            Patrolling();
+        }
+        if (playerInSightRange && !playerInAttackRange)
+        {
+            ResetAnimator();
+            animator.SetBool("isRunning", true);
+            animator.SetBool("isPlayerInSight", true);
+            ChasePlayer();
+        }
+        if (playerInSightRange && playerInAttackRange)
+        {
+            ResetAnimator();
+            animator.SetBool("isPlayerInAttack", true);
+            animator.SetBool("isPlayerInSight", true);
+            AttackPlayer();
+        }
     }
 
     private void Patrolling()
@@ -57,7 +87,6 @@ public class EnemyAI : MonoBehaviour
         {
             walkPointSet = false;
         }
-
     }
 
     private void SearchWalkPoint()
@@ -81,6 +110,8 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackPlayer()
     {
+        animator.SetBool("isAttaking", true);
+
         //make sure enemy doesn't move
         agent.SetDestination(transform.position);
 
@@ -88,9 +119,8 @@ public class EnemyAI : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            //attack code here
+            Debug.Log("Enemy hit");
 
-            //
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -100,5 +130,4 @@ public class EnemyAI : MonoBehaviour
     {
         alreadyAttacked = false;
     }
-
 }

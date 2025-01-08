@@ -6,7 +6,7 @@
     <File>
       <FileName>File #1</FileName>
       <ClusterName>Cluster #1</ClusterName>
-      <IDCounter>4</IDCounter>
+      <IDCounter>6</IDCounter>
       <BranchCluster>
         <Name>Cluster #1</Name>
         <Branch>
@@ -170,6 +170,112 @@
               <s>Teşekkür ederim.</s>
               <s>Dünyanın düzenini koruyacağım.</s>
             </Sentences>
+          </Instruction>
+        </Branch>
+        <Branch>
+          <Name>Od</Name>
+          <Type>DialogBranch</Type>
+          <ID>4</ID>
+          <IDCounter>6</IDCounter>
+          <ClusterName>Cluster #1</ClusterName>
+          <IsStartBranch>false</IsStartBranch>
+          <Instruction xsi:type="Dialog">
+            <Name>Yiğit</Name>
+            <Type>Dialog</Type>
+            <ID>0</ID>
+            <Expression />
+            <Animation />
+            <Voice />
+            <Sentences>
+              <s>Demek Od iyesi sensin.</s>
+              <s>Erlik'in kızları buradan kaçmış. Onları yakalayamadım...</s>
+            </Sentences>
+          </Instruction>
+          <Instruction xsi:type="Dialog">
+            <Name>Od İyesi</Name>
+            <Type>Dialog</Type>
+            <ID>1</ID>
+            <Expression />
+            <Animation />
+            <Voice />
+            <Sentences>
+              <s>Teşekkür ederim Yiğit. Artık özgürüm!</s>
+              <s>Hepinize ateş olmaya devam edeceğim</s>
+            </Sentences>
+          </Instruction>
+          <Instruction xsi:type="Dialog">
+            <Name>Şaman</Name>
+            <Type>Dialog</Type>
+            <ID>2</ID>
+            <Expression />
+            <Animation />
+            <Voice />
+            <Sentences>
+              <s>Beni duyuyor musun Yiğit?</s>
+            </Sentences>
+          </Instruction>
+          <Instruction xsi:type="Dialog">
+            <Name>Yiğit</Name>
+            <Type>Dialog</Type>
+            <ID>3</ID>
+            <Expression />
+            <Animation />
+            <Voice />
+            <Sentences>
+              <s>Şaman? Neredesin?</s>
+            </Sentences>
+          </Instruction>
+          <Instruction xsi:type="Dialog">
+            <Name>Şaman</Name>
+            <Type>Dialog</Type>
+            <ID>4</ID>
+            <Expression>NONE</Expression>
+            <Animation>NONE</Animation>
+            <Voice>NONE</Voice>
+            <Sentences>
+              <s>Seni yanıma ışınlayacağım...</s>
+            </Sentences>
+          </Instruction>
+          <Instruction xsi:type="Miscellaneous">
+            <Name>MainScene</Name>
+            <Type>Minigame</Type>
+            <ID>5</ID>
+          </Instruction>
+        </Branch>
+        <Branch>
+          <Name>Yel</Name>
+          <Type>DialogBranch</Type>
+          <ID>5</ID>
+          <IDCounter>3</IDCounter>
+          <ClusterName>Cluster #1</ClusterName>
+          <IsStartBranch>false</IsStartBranch>
+          <Instruction xsi:type="Dialog">
+            <Name>Yel İyesi</Name>
+            <Type>Dialog</Type>
+            <ID>0</ID>
+            <Expression />
+            <Animation />
+            <Voice />
+            <Sentences>
+              <s>Beni kurtardığın için teşekkür ederim Yiğit!</s>
+              <s>Artık dünyada rüzgarlar esebilir ve bitkiler çoğalabilir!</s>
+            </Sentences>
+          </Instruction>
+          <Instruction xsi:type="Dialog">
+            <Name>Şaman</Name>
+            <Type>Dialog</Type>
+            <ID>1</ID>
+            <Expression />
+            <Animation />
+            <Voice />
+            <Sentences>
+              <s>Tebrikler Yiğit! Seni tekrardan yanıma getiriyorum biraz dayan.</s>
+            </Sentences>
+          </Instruction>
+          <Instruction xsi:type="Miscellaneous">
+            <Name>MainScene</Name>
+            <Type>Minigame</Type>
+            <ID>2</ID>
           </Instruction>
         </Branch>
       </BranchCluster>

@@ -704,6 +704,16 @@ public class DialogManager : MonoBehaviour
             obj.GetComponent<VisualEffect>().enabled = true;
             obj.GetComponent<Collider>().enabled = true;
         }
+        else if (branchName == "Shaman Talk 2")
+        {
+            GameObject obj = GameObject.FindWithTag("Portal2");
+            obj.GetComponent<VisualEffect>().enabled = true;
+            obj.GetComponent<Collider>().enabled = true;
+        }
+        if (branchName == "Shaman Talk 3")
+        {
+            SahneManager.instance.LoadScene("MainMenu");
+        }
     }
     private void OnDrawGizmosSelected()
     {

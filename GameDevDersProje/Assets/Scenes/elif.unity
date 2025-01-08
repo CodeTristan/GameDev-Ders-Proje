@@ -2271,7 +2271,7 @@ Transform:
   m_GameObject: {fileID: 629107361}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 608.6833, y: -1, z: 577.5296}
+  m_LocalPosition: {x: 608.6833, y: -0.001, z: 577.5296}
   m_LocalScale: {x: 5.0140786, y: 1, z: 7.9992485}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3618,7 +3618,7 @@ MonoBehaviour:
   jumpForce: 9.1
   airMultiplier: 0.8
   groundDrag: 7
-  playerHeight: 1
+  playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -3764,7 +3764,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 747, y: 1.39, z: 620}
-  m_LocalScale: {x: 1, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1737930088}
@@ -3786,7 +3786,7 @@ MonoBehaviour:
   cam: {fileID: 2144620367}
   attackPoint: {fileID: 352277245}
   objectToThrow: {fileID: 3755785818040234540, guid: e80088f156c0a2348bd9556237e75e62, type: 3}
-  totalThrows: 100
+  totalThrows: 100000
   throwCooldown: 0.1
   throwKey: 323
   throwForce: 15
@@ -7841,10 +7841,81 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 79003873127931798, guid: b15a3de49e3987b4fb27f9cd08e0af58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5611837769405355164}
+    - targetCorrespondingSourceObject: {fileID: 79003873127931798, guid: b15a3de49e3987b4fb27f9cd08e0af58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5611837769405355163}
     - targetCorrespondingSourceObject: {fileID: 2768984996975630896, guid: b15a3de49e3987b4fb27f9cd08e0af58, type: 3}
       insertIndex: -1
       addedObject: {fileID: 179925338}
   m_SourcePrefab: {fileID: 100100000, guid: b15a3de49e3987b4fb27f9cd08e0af58, type: 3}
+--- !u!1 &5611837769405355162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 79003873127931798, guid: b15a3de49e3987b4fb27f9cd08e0af58, type: 3}
+  m_PrefabInstance: {fileID: 5611837769405355161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5611837769405355163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5611837769405355162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b0c09f2c9c9cf4e9b122d7f401ac6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger:
+    branchName: Od
+    fileName: File #1
+    isRepeatable: 0
+    isTriggered: 0
+    isRandom: 0
+    RequiredConditions: []
+    AffectedConditions:
+    - conditionName: Map1Complete
+      status: 1
+      type: 0
+      CheckSign: =
+      enumConditionName: 4
+    - conditionName: ShamanTalk 2
+      status: 1
+      type: 0
+      CheckSign: =
+      enumConditionName: 2
+    randomDialog:
+      name: NONE
+      type: 0
+      id: 0
+      Expression: NONE
+      Animation: NONE
+      voiceOverName: NONE
+      sentences: []
+    RandomDialogSelected: 0
+--- !u!65 &5611837769405355164
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5611837769405355162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.105225, y: 7.988806, z: 8.239136}
+  m_Center: {x: -0.74298096, y: 0.19965637, z: 1.9550171}
 --- !u!1001 &7353162694024405276
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4399,7 +4399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1967282265}
   attackPoint: {fileID: 166946026}
-  objectToThrow: {fileID: 8264566863878269194, guid: 1e934f43511593a4da7ff51e0ae9a8a2, type: 3}
+  objectToThrow: {fileID: 3755785818040234540, guid: e80088f156c0a2348bd9556237e75e62, type: 3}
   totalThrows: 100
   throwCooldown: 0.1
   throwKey: 323
@@ -7662,8 +7662,79 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 79003873127931798, guid: b15a3de49e3987b4fb27f9cd08e0af58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2052559300}
+    - targetCorrespondingSourceObject: {fileID: 79003873127931798, guid: b15a3de49e3987b4fb27f9cd08e0af58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2052559301}
   m_SourcePrefab: {fileID: 100100000, guid: b15a3de49e3987b4fb27f9cd08e0af58, type: 3}
+--- !u!1 &2052559299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 79003873127931798, guid: b15a3de49e3987b4fb27f9cd08e0af58, type: 3}
+  m_PrefabInstance: {fileID: 2052559298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2052559300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052559299}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.075113, y: 9.74, z: 10.038687}
+  m_Center: {x: -0.61517304, y: -1.188778, z: 1.019405}
+--- !u!114 &2052559301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052559299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b0c09f2c9c9cf4e9b122d7f401ac6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger:
+    branchName: Yel
+    fileName: File #1
+    isRepeatable: 0
+    isTriggered: 0
+    isRandom: 0
+    RequiredConditions: []
+    AffectedConditions:
+    - conditionName: Map2Complete
+      status: 1
+      type: 0
+      CheckSign: =
+      enumConditionName: 5
+    - conditionName: ShamanTalk 3
+      status: 1
+      type: 0
+      CheckSign: =
+      enumConditionName: 3
+    randomDialog:
+      name: NONE
+      type: 0
+      id: 0
+      Expression: NONE
+      Animation: NONE
+      voiceOverName: NONE
+      sentences: []
+    RandomDialogSelected: 0
 --- !u!1001 &2091364848
 PrefabInstance:
   m_ObjectHideFlags: 0

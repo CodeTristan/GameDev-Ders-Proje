@@ -34,7 +34,7 @@ public class EnemyAI : MonoBehaviour
     void ResetAnimator()
     {
 
-        animator.SetBool("isWalking", false);
+        animator.SetBool("isWalking", true);
         animator.SetBool("isRunning", false);
         animator.SetBool("isAttaking", false);
         animator.SetBool("isPlayerInSight", false);

@@ -6,7 +6,7 @@
     <File>
       <FileName>File #1</FileName>
       <ClusterName>Cluster #1</ClusterName>
-      <IDCounter>3</IDCounter>
+      <IDCounter>4</IDCounter>
       <BranchCluster>
         <Name>Cluster #1</Name>
         <Branch>
@@ -136,6 +136,39 @@
             <Sentences>
               <s>...</s>
               <s>Tamam...</s>
+            </Sentences>
+          </Instruction>
+        </Branch>
+        <Branch>
+          <Name>Shaman Talk 3</Name>
+          <Type>DialogBranch</Type>
+          <ID>3</ID>
+          <IDCounter>2</IDCounter>
+          <ClusterName>Cluster #1</ClusterName>
+          <IsStartBranch>false</IsStartBranch>
+          <Instruction xsi:type="Dialog">
+            <Name>Şaman</Name>
+            <Type>Dialog</Type>
+            <ID>0</ID>
+            <Expression />
+            <Animation />
+            <Voice />
+            <Sentences>
+              <s>Başardın Yiğit! Dünyaya düzeni tekrardan getirdin.</s>
+              <s>Od Ana ve Yel Ana sana müteşekkir ve bu sebepten dolayı güçlerini elinden almayacaklar.</s>
+              <s>Bunları iyiye kullan!</s>
+            </Sentences>
+          </Instruction>
+          <Instruction xsi:type="Dialog">
+            <Name>Yiğit</Name>
+            <Type>Dialog</Type>
+            <ID>1</ID>
+            <Expression />
+            <Animation />
+            <Voice />
+            <Sentences>
+              <s>Teşekkür ederim.</s>
+              <s>Dünyanın düzenini koruyacağım.</s>
             </Sentences>
           </Instruction>
         </Branch>

@@ -475,6 +475,7 @@ public class DialogManager : MonoBehaviour
                 MusicManager.instance.PlaySound(dialog.voiceOverName);
         }
 
+        
         if (dialog.name == "MC")
         {
             nameText.text = PlayerName;
@@ -535,6 +536,12 @@ public class DialogManager : MonoBehaviour
         sentence = sentences.Dequeue();
         Dialog d = (Dialog)dialogLogManager.LogInstructions[dialogLogManager.LogInstructions.Count - 1];
         d.sentences.Add(sentence);
+
+        if (d.name == "Þaman")
+        {
+            int r = Random.Range(1, 4);
+            MusicManager.instance.PlaySound("talk" + r);
+        }
         StartCoroutine(TypeSentence());
     }
 

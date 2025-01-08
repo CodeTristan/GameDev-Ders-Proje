@@ -30,7 +30,7 @@ public class SahneManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         BackgroundManager.instance.FindCamera();
-
+        MusicManager.instance.PlayMusic(scene.name,true);
         if (scene.name == "MainScene")
         {   
 

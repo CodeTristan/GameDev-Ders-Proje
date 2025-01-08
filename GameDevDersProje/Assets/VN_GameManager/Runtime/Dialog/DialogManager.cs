@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 using System.IO;
 using System.Xml;
 using static UnityEngine.InputSystem.DefaultInputActions;
+using UnityEngine.VFX;
 
 [System.Serializable]
 public class DialogManagerVariables
@@ -680,7 +681,9 @@ public class DialogManager : MonoBehaviour
     {
         if(branchName == "Shaman Talk 1")
         {
-            GameObject.FindWithTag("Portal1").gameObject.SetActive(true);
+            GameObject obj = GameObject.FindWithTag("Portal1");
+            obj.GetComponent<VisualEffect>().enabled = true;
+            obj.GetComponent<Collider>().enabled = true;
         }
     }
     private void OnDrawGizmosSelected()

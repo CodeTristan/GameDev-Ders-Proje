@@ -83,7 +83,9 @@ public enum ConditionName
     GameStart,
     ShamanTalk_1,
     ShamanTalk_2,
-    ShamanTalk_3
+    ShamanTalk_3,
+    Map1Complete,
+    Map2Complete
 }
 
 [System.Serializable]
@@ -103,11 +105,15 @@ public class AllConditions
         conditionNameDictionary.Add(ConditionName.ShamanTalk_1, "ShamanTalk 1");
         conditionNameDictionary.Add(ConditionName.ShamanTalk_2, "ShamanTalk 2");
         conditionNameDictionary.Add(ConditionName.ShamanTalk_3, "ShamanTalk 3");
+        conditionNameDictionary.Add(ConditionName.Map1Complete, "Map1Complete");
+        conditionNameDictionary.Add(ConditionName.Map2Complete, "Map2Complete");
 
         conditions.Add(new Condition("GameStart", 1));
         conditions.Add(new Condition("ShamanTalk 1", 1));
         conditions.Add(new Condition("ShamanTalk 2", 0));
         conditions.Add(new Condition("ShamanTalk 3", 0));
+        conditions.Add(new Condition("Map1Complete", 0));
+        conditions.Add(new Condition("Map2Complete", 0));
     }
 
 

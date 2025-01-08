@@ -11,7 +11,7 @@ public class BasicEnemy : MonoBehaviour
     {
         health -= damage;
         if (health <= 0)
-        Destroy(gameObject);
+        Destroy(gameObject, 1.5f);
 
     }
 }

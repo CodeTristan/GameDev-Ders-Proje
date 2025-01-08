@@ -33,7 +33,7 @@ public class MusicManager : MonoBehaviour
         instance = this;
         source.mute = isMuted;
         SoundEffects = new List<SoundEffect>();
-        PlayMusic("General Theme");
+        PlayMusic("MainScene");
     }
     public void PlayMusic(string name,bool CheckSameMusic = false)
     {

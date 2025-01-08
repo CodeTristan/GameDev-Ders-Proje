@@ -3763,7 +3763,7 @@ Transform:
   m_GameObject: {fileID: 1087633264}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 640, y: 1.39, z: 552}
+  m_LocalPosition: {x: 747, y: 1.39, z: 620}
   m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3803,7 +3803,6 @@ GameObject:
   - component: {fileID: 1089621619}
   - component: {fileID: 1089621618}
   - component: {fileID: 1089621617}
-  - component: {fileID: 1089621616}
   - component: {fileID: 1089621615}
   m_Layer: 0
   m_Name: CaveExit
@@ -3822,19 +3821,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad58f0363124e5644903e9188140a5f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sun: {fileID: 721352031}
---- !u!114 &1089621616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089621614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cf3a9ae2ad841b459c655c78eae92cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sun: {fileID: 721352031}
